@@ -12,7 +12,7 @@
     <p>
     <?php
         $content = $message->content;
-        $path = env("SCRIPT_PATH");
+        $path = public_path("CreateAnagram.jar");
         exec("java -jar $path $content", $anagram);
         $cut_array = array_slice($anagram, 0, 10);
         foreach ($cut_array as $key => $sentence) {

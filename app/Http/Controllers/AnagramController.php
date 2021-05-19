@@ -13,7 +13,7 @@ class AnagramController extends Controller
         $content = $request->content;
         $number = $request->number;
 
-        $path = env("SCRIPT_PATH");
+        $path = public_path("CreateAnagram.jar");
         exec("java -jar $path $content", $anagram);
 
         echo (json_encode(array_slice($anagram, 0, $number)));
